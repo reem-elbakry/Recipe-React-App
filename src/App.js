@@ -1,10 +1,13 @@
 import './App.css';
 import Pages from './pages/Pages';
+import Category from './components/Category';
+import Search from './components/Search';
 
 function App() {
   return (
     <div className="App">
-      <h1>THE LOST CHEF</h1>
+      <Search/>
+      <Category/>
       <Pages />
     </div>
   );
