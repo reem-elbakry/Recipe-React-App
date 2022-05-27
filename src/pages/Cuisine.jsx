@@ -7,13 +7,12 @@ import '../components/Card.css';
 function Cuisine() {
   const [ cuisine, setCousine ] = useState([]);
   let {area} = useParams('area');
-  console.log(area);
+
   const getCuisine = async(area)=>{
     try {
       const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
       const data = await response.json();
       setCousine(data.meals);
-      console.log(cuisine);
     } catch (error) {
       console.log(error);
     }
@@ -21,7 +20,6 @@ function Cuisine() {
 
   useEffect(() => {
     getCuisine(area);
-  
   }, [area])
   
   return (

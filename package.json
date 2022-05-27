@@ -1,5 +1,4 @@
 {
-  "proxy": "http://www.themealdb.com/",
   "name": "the-lost-chef",
   "version": "0.1.0",
   "private": true,
