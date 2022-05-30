@@ -34,21 +34,37 @@ function Recipe() {
       <Info>
         <Button className={activeTab === 'instructions'? 'active' : ''} onClick={()=>{setActiveTab("instructions")}}>Instructions</Button>
         <Button className={activeTab === 'ingredients'? 'active' : ''} onClick={()=>{setActiveTab("ingredients")}}>Ingredients</Button>
-        <div>
-          <h3 dangerouslySetInnerHTML={{__html: details.strInstructions?.split("\r\n").join(".")}}>
-          </h3>
-          <ul>
-          
           {
-            Object.keys(details).map(function(key, index) {
-              if (/^strIngredient/.test(key)){
-                return <li key={index}>{details[key]}</li>
-              }
-          })
-          }
-            <li>{details.strIngredient1}</li>
-          </ul>
-        </div>
+            activeTab === 'instructions' 
+            &&  
+            
+            <p dangerouslySetInnerHTML={{__html: details.strInstructions?.split("\r\n").join(".")}}></p>
+            
+          
+          } 
+
+          {
+            activeTab === "ingredients" 
+            && 
+    
+            <ul>
+            {
+              Object.keys(details).map(function(key, index) {
+                if (/^strIngredient/.test(key) && details[key] !== ""){
+                  
+
+                  return (
+                    <>
+                      <image src={`https://www.themealdb.com/images/ingredients/${details[key]}.png`} />
+                      <p key={index}>{details[key]}</p>
+                    </>
+                  )
+                }
+            })
+            }
+            </ul>
+        
+          } 
       </Info>
     </DetailWrapper>
   )
