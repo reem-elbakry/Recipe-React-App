@@ -21,10 +21,12 @@ function Searched() {
 
   return (
     <>
-      {/* <h4 className="text-center"><strong>{search} Search Results: </strong></h4> */}
       <hr />
       <div class="flex flex-wrap justify-center">
-        {searchedMeal?.map((meal, index) => {
+      {
+        searchedMeal?.length > 0 ?
+        <>
+        {searchedMeal.map((meal, index) => {
           return (
             <div class="col-span-2 m-3" key={index}>
               <Link to={'/recipe/' + meal.idMeal}>
@@ -32,8 +34,14 @@ function Searched() {
               </Link>
               <p class="text-xs -translate-y-6 text-white font-semibold sm:-translate-y-8 sm:text-base translate-x-3">{meal.strMeal}</p>
             </div>
-          )
-        })}  <img src='https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg' alt='not found'/>
+          ) 
+        })} 
+        </>
+          :
+          
+           <img src='https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg' alt='not found'/>
+      }
+ 
       </div>
 
     </>

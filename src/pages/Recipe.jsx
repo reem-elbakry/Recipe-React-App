@@ -76,12 +76,12 @@ function Recipe() {
 
 
                                 return (
-                                    <>
+                                    
                                         <div class="col-span-2 m-5" key={index}>
                                             <img src={`https://www.themealdb.com/images/ingredients/${details[key]}-Small.png` !== 'N/A' ? `https://www.themealdb.com/images/ingredients/${details[key]}-Small.png` : 'https://www.food4fuel.com/wp-content/uploads/woocommerce-placeholder-600x600.png'} class="rounded-xl brightness-75" alt={details[key]} />
                                             <p class="text-xs -translate-y-0 text-orange-400 font-semibold sm:-translate-y-15 sm:text-base translate-x-3">{details[key]}</p>
                                         </div>
-                                    </>
+                                    
                                 )
 
                         })
