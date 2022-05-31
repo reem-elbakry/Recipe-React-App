@@ -1,4 +1,4 @@
-import Veggie from "../components/Veggie";
+import Dessert from "../components/Dessert";
 import Popular from "../components/Popular";
 import { motion } from 'framer-motion';
 
@@ -12,7 +12,8 @@ function Home() {
     transition= {{duration: 0.5}}
     >
         <Popular />
-        <Veggie />
+        <hr/>
+        <Dessert />
     </motion.div>
   )
 }
